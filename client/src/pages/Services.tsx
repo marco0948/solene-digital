@@ -105,7 +105,7 @@ export default function Services() {
                     className="group bg-card hover:bg-primary/5 border border-border hover:border-primary/20 rounded-3xl p-8 transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
                   >
                     <div className="w-14 h-14 rounded-2xl bg-secondary group-hover:bg-primary text-primary group-hover:text-white flex items-center justify-center mb-6 transition-colors duration-300">
-                      <s.i className="w-7 h-7" />
+                      <Layers className="w-7 h-7" />
                     </div>
                     <h3 className="text-2xl font-bold font-display mb-3 text-foreground">{s.t}</h3>
                     <p className="text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors">{s.d}</p>
