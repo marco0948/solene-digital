@@ -53,8 +53,8 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.1 }}
               className="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-white leading-[1.1] mb-8 tracking-tight"
             >
-              We Craft <span className="gradient-text">Digital</span><br />
-              Experiences That <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/50">Grow.</span>
+              Clarity. <span className="gradient-text">Strategy.</span><br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/50">Revenue.</span>
             </motion.h1>
 
             <motion.p 
@@ -63,7 +63,7 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="text-xl md:text-2xl text-muted-foreground max-w-2xl mb-12 leading-relaxed"
             >
-              Solene Digital helps ambitious brands scale through strategic marketing, cutting-edge design, and data-driven development.
+              A Boutique Digital Marketing & Revenue Growth Studio. We design and execute digital systems that generate visibility, leads, and sustainable revenue.
             </motion.p>
 
             <motion.div 
@@ -109,10 +109,10 @@ export default function Home() {
             className="text-center max-w-3xl mx-auto mb-20"
           >
             <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl font-display font-bold mb-6 text-foreground">
-              Our Expertise
+              What We Do
             </motion.h2>
             <motion.p variants={fadeInUp} className="text-lg text-muted-foreground">
-              Comprehensive digital solutions tailored to your unique business challenges.
+              Growth strategy, paid advertising, automation systems, and strategic consulting to drive measurable revenue.
             </motion.p>
           </motion.div>
 
@@ -125,9 +125,9 @@ export default function Home() {
           >
             {/* Fallback Static Services if API is loading or fails */}
             {(!services || services.length === 0) && [
-              { icon: Globe2, title: "Digital Strategy", desc: "Data-backed roadmaps for sustainable growth." },
-              { icon: Rocket, title: "Performance Marketing", desc: "Campaigns that convert and deliver ROI." },
-              { icon: Zap, title: "Web Development", desc: "Fast, secure, and beautiful digital experiences." }
+              { icon: Globe2, title: "Growth & Revenue Strategy", desc: "Market analysis, customer journey design, revenue modeling, and strategic roadmaps aligned with business goals." },
+              { icon: Rocket, title: "Digital Marketing & Paid Advertising", desc: "Meta and Google Ads, content creation, and SEO to turn strategy into consistent, measurable demand." },
+              { icon: Zap, title: "CRM, Funnels & Automation", desc: "Lead capture systems, appointment booking, email automation, and CRM optimization for automatic conversion and follow-up." }
             ].map((s, i) => (
               <motion.div 
                 key={i}
@@ -177,25 +177,24 @@ export default function Home() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-12">
             <div className="max-w-2xl">
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 text-white">
-                Ready to transform <br />
-                your digital presence?
+                Let's build your <br />
+                revenue growth system.
               </h2>
               <p className="text-xl text-muted-foreground mb-8">
-                Join hundreds of successful businesses who chose Solene.
+                Partner with Solène Digital and turn clarity and strategy into measurable results.
               </p>
               <Link href="/contact">
                 <Button size="lg" className="bg-white text-foreground hover:bg-white/90 rounded-full px-10 py-7 text-lg font-semibold">
-                  Get a Free Audit
+                  Start Your Partnership
                 </Button>
               </Link>
             </div>
-            {/* Using Unsplash image for abstract tech vibe */}
+            {/* Using Solene Digital logo */}
             <div className="w-full md:w-1/3 aspect-square relative">
-              {/* abstract modern architecture building minimal */}
               <img 
-                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80"
-                alt="Modern building"
-                className="w-full h-full object-cover rounded-3xl opacity-80 mix-blend-overlay"
+                src="/solene-logo.png"
+                alt="Solene Digital Logo"
+                className="w-full h-full object-contain rounded-3xl"
               />
             </div>
           </div>

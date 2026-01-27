@@ -37,14 +37,16 @@ export function Navbar() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-primary-foreground font-bold text-xl shadow-lg group-hover:shadow-primary/50 transition-all duration-300 group-hover:scale-105">
-              S
-            </div>
+            <img 
+              src="/image.png" 
+              alt="Solène Digital" 
+              className="w-10 h-10 rounded-full shadow-lg group-hover:shadow-primary/50 transition-all duration-300 group-hover:scale-105 object-cover"
+            />
             <span className={cn(
               "text-2xl font-bold tracking-tight font-display transition-colors",
               scrolled ? "text-foreground" : "text-foreground sm:text-white"
             )}>
-              Solene<span className="text-primary">.</span>
+              Solène<span className="text-primary"> Digital</span>
             </span>
           </Link>
 

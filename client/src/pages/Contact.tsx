@@ -45,10 +45,10 @@ export default function Contact() {
             animate={{ opacity: 1, y: 0 }}
             className="text-5xl font-display font-bold mb-6"
           >
-            Get in Touch
+            Let's Work Together
           </motion.h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Have a project in mind? We'd love to hear from you. Let's create something amazing together.
+            Ready to build your revenue growth system? Contact us to discuss your business goals and how we can help.
           </p>
         </div>
       </section>
@@ -59,12 +59,12 @@ export default function Contact() {
             
             {/* Contact Info */}
             <div>
-              <h2 className="text-3xl font-display font-bold mb-8">Contact Information</h2>
+              <h2 className="text-3xl font-display font-bold mb-8">Get in Touch</h2>
               <div className="space-y-8">
                 {[
-                  { icon: Mail, title: "Email Us", content: "hello@solenedigital.com" },
-                  { icon: Phone, title: "Call Us", content: "+1 (555) 123-4567" },
-                  { icon: MapPin, title: "Visit Us", content: "123 Innovation Dr, Tech City, TC 94000" }
+                  { icon: Mail, title: "Email", content: "solenedigitalph@gmail.com" },
+                  { icon: Phone, title: "Contact Number", content: "+63 917 160 1639" },
+                  { icon: MapPin, title: "Services", content: "Digital Strategy, Paid Ads, Automation & Consulting" }
                 ].map((item, i) => (
                   <motion.div 
                     key={i}
@@ -87,7 +87,7 @@ export default function Contact() {
               {/* Map Placeholder */}
               <div className="mt-12 w-full h-64 bg-secondary rounded-2xl overflow-hidden grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.063687399084!2d-122.4194154846819!3d37.77492977975971!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085809c6c8f4459%3A0xb10ed6d9b5050fa5!2sTwitter+HQ!5e0!3m2!1sen!2sus!4v1532982400323" 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.8763446869463!2d120.9753!3d14.5995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTTCsDM1JzU3LjAiTiAxMjDCsDU4JzUxLjkiRQ!5e0!3m2!1sen!2sph!4v1234567890" 
                   width="100%" 
                   height="100%" 
                   style={{ border: 0 }} 
@@ -127,7 +127,7 @@ export default function Contact() {
                         <FormItem>
                           <FormLabel>Name</FormLabel>
                           <FormControl>
-                            <Input placeholder="John Doe" {...field} className="h-12 bg-secondary/20" />
+                            <Input placeholder="Your Full Name" {...field} className="h-12 bg-secondary/20" />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -141,7 +141,7 @@ export default function Contact() {
                         <FormItem>
                           <FormLabel>Email</FormLabel>
                           <FormControl>
-                            <Input placeholder="john@example.com" {...field} className="h-12 bg-secondary/20" />
+                            <Input placeholder="your@email.com" {...field} className="h-12 bg-secondary/20" />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -156,7 +156,7 @@ export default function Contact() {
                           <FormLabel>Message</FormLabel>
                           <FormControl>
                             <Textarea 
-                              placeholder="Tell us about your project..." 
+                              placeholder="Tell us about your business goals..." 
                               className="min-h-[150px] bg-secondary/20 resize-none" 
                               {...field} 
                             />

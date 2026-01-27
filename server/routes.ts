@@ -3,6 +3,7 @@ import type { Server } from "http";
 import { storage } from "./storage";
 import { api } from "@shared/routes";
 import { z } from "zod";
+import { sendContactNotification } from "./email";
 
 export async function registerRoutes(
   httpServer: Server,
@@ -13,6 +14,15 @@ export async function registerRoutes(
     try {
       const input = api.contacts.create.input.parse(req.body);
       const contact = await storage.createContact(input);
+      
+      // Send email notification
+      try {
+        await sendContactNotification(input.email, input.name, input.message);
+      } catch (emailError) {
+        console.error("Failed to send email:", emailError);
+        // Don't fail the request if email fails
+      }
+      
       res.status(201).json(contact);
     } catch (err) {
       if (err instanceof z.ZodError) {
@@ -69,22 +79,16 @@ async function seedDatabase() {
   const existingTeam = await storage.getTeamMembers();
   if (existingTeam.length === 0) {
     await storage.createTeamMember({
-      name: "Alex Solene",
-      role: "Founder & CEO",
-      bio: "Digital marketing visionary with 10+ years of experience transforming brands.",
-      imageUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      name: "Carmela Vargas",
+      role: "Founder and Chief Strategy & Revenue Lead",
+      bio: "Over a decade of experience driving measurable growth across healthcare, digital marketing, real estate, food & beverage, and agri-trading. Leads growth strategy, revenue planning, and overall client direction.",
+      imageUrl: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     });
     await storage.createTeamMember({
-      name: "Sarah Jenkins",
-      role: "Head of Strategy",
-      bio: "Expert in crafting comprehensive digital strategies that deliver measurable results.",
-      imageUrl: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-    });
-    await storage.createTeamMember({
-      name: "Michael Chen",
-      role: "Creative Director",
-      bio: "Award-winning designer passionate about creating memorable brand experiences.",
-      imageUrl: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      name: "Adrian Baua",
+      role: "Founder and Digital Systems Lead",
+      bio: "Specializes in high-performing Meta and Google Ads, funnel optimization, and automation systems. Focus on scalable, data-driven execution that maximizes return on ad spend.",
+      imageUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     });
   }
 }

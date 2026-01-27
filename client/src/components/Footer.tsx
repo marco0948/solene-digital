@@ -10,24 +10,34 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="space-y-6">
             <Link href="/" className="flex items-center gap-2 group">
-              <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-primary-foreground font-bold text-xl">
-                S
-              </div>
+              <img 
+                src="/image.png" 
+                alt="Solène Digital" 
+                className="w-10 h-10 rounded-full shadow-lg group-hover:shadow-primary/50 transition-all duration-300 group-hover:scale-105 object-cover"
+              />
               <span className="text-2xl font-bold tracking-tight font-display text-white">
-                Solene<span className="text-primary">.</span>
+                Solène<span className="text-primary"> Digital</span>
               </span>
             </Link>
             <p className="text-muted-foreground leading-relaxed max-w-xs">
-              Transforming businesses through digital innovation and strategic marketing excellence.
+              Clarity. Strategy. Revenue. A boutique digital marketing and revenue growth studio.
             </p>
             <div className="flex gap-4">
-              {[Facebook, Twitter, Instagram, Linkedin].map((Icon, i) => (
+              {[
+                { icon: Facebook, href: "https://www.facebook.com/profile.php?id=61586126195597", label: "Facebook" },
+                { icon: Twitter, href: "#", label: "Twitter" },
+                { icon: Instagram, href: "https://www.instagram.com/solenedigitalph/", label: "Instagram" },
+                { icon: Linkedin, href: "#", label: "LinkedIn" }
+              ].map((social, i) => (
                 <a
                   key={i}
-                  href="#"
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-white transition-all duration-300"
+                  title={social.label}
                 >
-                  <Icon className="w-5 h-5" />
+                  <social.icon className="w-5 h-5" />
                 </a>
               ))}
             </div>

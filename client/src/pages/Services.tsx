@@ -44,7 +44,7 @@ export default function Services() {
             animate={{ opacity: 1, y: 0 }}
             className="text-5xl md:text-6xl font-display font-bold text-foreground mb-6"
           >
-            Our Services
+            What We Do
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0 }}
@@ -52,7 +52,7 @@ export default function Services() {
             transition={{ delay: 0.2 }}
             className="text-xl text-muted-foreground max-w-2xl mx-auto"
           >
-            We deliver end-to-end digital solutions designed to elevate your brand and drive measurable growth.
+            Growth strategy, paid advertising, automation systems, and strategic consulting to drive measurable revenue for your business.
           </motion.p>
         </div>
       </div>
@@ -95,9 +95,9 @@ export default function Services() {
             {(!services || services.length === 0) && (
               <>
                  {[
-                   { t: "Web Development", d: "Custom websites built with modern technologies for speed and scale.", i: Code2 },
-                   { t: "SEO Optimization", d: "Improve your rankings and drive organic traffic to your business.", i: BarChart },
-                   { t: "Brand Strategy", d: "Define your voice and visual identity to stand out in the market.", i: Layers },
+                   { t: "Growth & Revenue Strategy", d: "Market analysis, customer journey design, revenue modeling, and strategic roadmaps aligned with business goals." },
+                   { t: "Digital Marketing & Paid Advertising", d: "Meta and Google Ads, content creation, and SEO support to turn strategy into consistent demand." },
+                   { t: "CRM, Funnels & Automation", d: "Lead capture systems, appointment booking, email automation, and CRM optimization for automatic conversion." },
                  ].map((s, idx) => (
                    <motion.div 
                     key={idx}

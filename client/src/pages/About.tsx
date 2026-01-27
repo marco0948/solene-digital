@@ -22,19 +22,19 @@ export default function About() {
             >
               <h1 className="text-5xl md:text-7xl font-display font-bold mb-8 leading-tight text-white">
                 We Are <br/>
-                <span className="text-primary">Solene Digital.</span>
+                <span className="text-primary">Solène Digital.</span>
               </h1>
               <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-                Founded in 2024, we are a collective of strategists, designers, and developers united by a single mission: to build digital products that matter.
+                Founded by Carmela Vargas and Adrian Baua, Solène Digital is a founder-led, boutique digital marketing and revenue growth studio built for businesses that want more than vanity metrics. We partner with healthcare providers, e-commerce brands, real estate companies, and more that value transparency and long-term growth.
               </p>
               <div className="grid grid-cols-2 gap-6">
                 <div className="border-l-2 border-primary pl-6">
-                  <h3 className="text-4xl font-bold text-white mb-2">50+</h3>
-                  <p className="text-muted-foreground">Projects Delivered</p>
+                  <h3 className="text-4xl font-bold text-white mb-2">Multiple</h3>
+                  <p className="text-muted-foreground">Industries Served</p>
                 </div>
                 <div className="border-l-2 border-primary pl-6">
-                  <h3 className="text-4xl font-bold text-white mb-2">98%</h3>
-                  <p className="text-muted-foreground">Client Satisfaction</p>
+                  <h3 className="text-4xl font-bold text-white mb-2">Founder-</h3>
+                  <p className="text-muted-foreground">Led Execution</p>
                 </div>
               </div>
             </motion.div>
@@ -62,17 +62,17 @@ export default function About() {
       <section className="py-24 bg-secondary/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">Our Core Values</h2>
+            <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">Why Clients Choose Solène Digital</h2>
             <p className="text-muted-foreground text-lg">
-              We believe in transparency, excellence, and creating real value for our partners.
+              Strategy-first approach, transparent pricing, measurable results, founder-led execution, and customized solutions.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { title: "Innovation First", desc: "We constantly explore new technologies to keep you ahead." },
-              { title: "Data Driven", desc: "Every decision is backed by analytics and user behavior data." },
-              { title: "Transparent Process", desc: "No hidden fees, no jargon. Just clear communication." }
+              { title: "Strategy First", desc: "Every engagement begins with a clear growth and revenue blueprint." },
+              { title: "Transparent Pricing", desc: "Clear separation between strategy and execution, no hidden fees." },
+              { title: "Measurable Results", desc: "Performance tracked through defined KPIs tied to leads and revenue." }
             ].map((v, i) => (
               <motion.div 
                 key={i}
@@ -96,7 +96,7 @@ export default function About() {
       {/* Team Section */}
       <section className="py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-display font-bold mb-16 text-center">Meet The Experts</h2>
+          <h2 className="text-3xl md:text-4xl font-display font-bold mb-16 text-center">Meet Our Founders</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {isLoading ? (
