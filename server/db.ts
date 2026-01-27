@@ -16,4 +16,10 @@ export const pool = new Pool({
   connectionTimeoutMillis: 10000,
   idleTimeoutMillis: 30000,
 });
+
+// Test the connection
+pool.on('error', (err) => {
+  console.error('Database pool error:', err);
+});
+
 export const db = drizzle(pool, { schema });

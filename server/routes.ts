@@ -46,7 +46,12 @@ export async function registerRoutes(
   });
 
   // Seed data function
-  await seedDatabase();
+  try {
+    await seedDatabase();
+  } catch (error) {
+    console.error("Failed to seed database:", error);
+    // Don't fail the entire app if seeding fails
+  }
 
   return httpServer;
 }
