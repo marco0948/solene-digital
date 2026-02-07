@@ -1,5 +1,6 @@
 import type { Express } from "express";
 import type { Server } from "http";
+import { db } from "./db";
 import { storage } from "./storage";
 import { api } from "@shared/routes";
 import { z } from "zod";
@@ -16,7 +17,7 @@ export async function registerRoutes(
       console.log("Setting up database tables...");
       
       // Create contacts table
-      await storage.db.execute(`
+      await db.execute(`
         CREATE TABLE IF NOT EXISTS contacts (
           id SERIAL PRIMARY KEY,
           name VARCHAR(255) NOT NULL,
@@ -27,7 +28,7 @@ export async function registerRoutes(
       `);
 
       // Create services table
-      await storage.db.execute(`
+      await db.execute(`
         CREATE TABLE IF NOT EXISTS services (
           id SERIAL PRIMARY KEY,
           title VARCHAR(255) NOT NULL,
@@ -38,7 +39,7 @@ export async function registerRoutes(
       `);
 
       // Create team_members table
-      await storage.db.execute(`
+      await db.execute(`
         CREATE TABLE IF NOT EXISTS team_members (
           id SERIAL PRIMARY KEY,
           name VARCHAR(255) NOT NULL,
@@ -52,7 +53,7 @@ export async function registerRoutes(
       console.log("✅ Database tables created successfully!");
       
       // Insert default services
-      await storage.db.execute(`
+      await db.execute(`
         INSERT INTO services (title, description, icon) VALUES
         ('Digital Strategy', 'Clear roadmaps designed around your business goals. We analyze your market, audience, and opportunities to create actionable growth plans.', 'target'),
         ('Social Media Management', 'Consistent, on-brand content with purpose. We manage your social presence to build community and drive meaningful engagement.', 'megaphone'),
@@ -66,7 +67,7 @@ export async function registerRoutes(
       console.log("✅ Default services inserted successfully!");
       
       res.json({ success: true, message: "Database setup completed successfully!" });
-    } catch (error) {
+    } catch (error: any) {
       console.error("❌ Database setup error:", error);
       res.status(500).json({ success: false, error: error.message });
     }
