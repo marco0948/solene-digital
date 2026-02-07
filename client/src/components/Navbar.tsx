@@ -37,16 +37,14 @@ export function Navbar() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2 group">
-            <img 
-              src="/image.png" 
-              alt="Solène Digital" 
-              className="w-10 h-10 rounded-full shadow-lg group-hover:shadow-primary/50 transition-all duration-300 group-hover:scale-105 object-cover"
-            />
+            <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center shadow-lg group-hover:shadow-accent/50 transition-all duration-300 group-hover:scale-105">
+              <span className="text-white font-bold text-lg">S</span>
+            </div>
             <span className={cn(
               "text-2xl font-bold tracking-tight font-display transition-colors",
               scrolled ? "text-foreground" : "text-foreground sm:text-white"
             )}>
-              Solène<span className="text-primary"> Digital</span>
+              SOLÈNE<br/><span className="text-accent">DIGITAL</span>
             </span>
           </Link>
 
@@ -73,11 +71,11 @@ export function Navbar() {
               <Button 
                 variant={scrolled ? "default" : "secondary"}
                 className={cn(
-                  "font-semibold rounded-full px-6 transition-all hover:scale-105 active:scale-95",
-                  !scrolled && "bg-white text-primary hover:bg-white/90"
+                  "btn-primary font-semibold rounded-full px-6 transition-all hover:scale-105 active:scale-95",
+                  !scrolled && "bg-white text-accent hover:bg-white/90"
                 )}
               >
-                Get Started
+                Work With Us
               </Button>
             </Link>
           </div>
@@ -114,8 +112,8 @@ export function Navbar() {
             </Link>
           ))}
           <Link href="/contact" onClick={() => setIsOpen(false)}>
-            <Button className="w-full rounded-lg py-6 text-lg">
-              Get Started
+            <Button className="btn-primary w-full rounded-lg py-6 text-lg">
+              Work With Us
             </Button>
           </Link>
         </div>

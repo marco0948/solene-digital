@@ -1,138 +1,159 @@
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { useTeam } from "@/hooks/use-content";
 import { CheckCircle2 } from "lucide-react";
 
 export default function About() {
-  const { data: team, isLoading } = useTeam();
-
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
 
       {/* Hero */}
-      <section className="pt-32 pb-20 bg-foreground text-background">
+      <section className="pt-32 pb-20 bg-secondary">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.h1 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
+              className="text-5xl md:text-7xl font-display font-bold mb-8 leading-tight text-foreground"
             >
-              <h1 className="text-5xl md:text-7xl font-display font-bold mb-8 leading-tight text-white">
-                We Are <br/>
-                <span className="text-primary">Solène Digital.</span>
-              </h1>
-              <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-                Founded by Carmela Vargas and Adrian Baua, Solène Digital is a founder-led, boutique digital marketing and revenue growth studio built for businesses that want more than vanity metrics. We partner with healthcare providers, e-commerce brands, real estate companies, and more that value transparency and long-term growth.
-              </p>
-              <div className="grid grid-cols-2 gap-6">
-                <div className="border-l-2 border-primary pl-6">
-                  <h3 className="text-4xl font-bold text-white mb-2">Multiple</h3>
-                  <p className="text-muted-foreground">Industries Served</p>
-                </div>
-                <div className="border-l-2 border-primary pl-6">
-                  <h3 className="text-4xl font-bold text-white mb-2">Founder-</h3>
-                  <p className="text-muted-foreground">Led Execution</p>
-                </div>
-              </div>
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8 }}
-              className="relative"
+              About <br/>
+              <span className="text-accent">SOLÈNE DIGITAL</span>
+            </motion.h1>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-xl text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed"
             >
-              {/* office meeting creative team working together */}
-              <img 
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80" 
-                alt="Our Team" 
-                className="rounded-3xl shadow-2xl grayscale hover:grayscale-0 transition-all duration-700"
-              />
-              {/* Decorative Frame */}
-              <div className="absolute inset-0 border-2 border-primary/30 rounded-3xl translate-x-6 translate-y-6 -z-10" />
-            </motion.div>
+              SOLÈNE DIGITAL is a boutique growth studio built for brands that want more than visibility—they want direction.
+              <br /><br />
+              We believe growth should feel intentional, not overwhelming. Our work blends strategy, creativity, and analytics to help businesses move forward with confidence.
+              <br /><br />
+              We don't chase trends. We build systems that last.
+            </motion.p>
           </div>
         </div>
       </section>
 
-      {/* Values */}
-      <section className="py-24 bg-secondary/30">
+      {/* Brand Values */}
+      <section className="py-24 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">Why Clients Choose Solène Digital</h2>
-            <p className="text-muted-foreground text-lg">
-              Strategy-first approach, transparent pricing, measurable results, founder-led execution, and customized solutions.
-            </p>
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="text-3xl md:text-4xl font-display font-bold mb-6 text-foreground"
+            >
+              Our Values
+            </motion.h2>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="text-muted-foreground text-lg"
+            >
+              The principles that guide every decision we make.
+            </motion.p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { title: "Strategy First", desc: "Every engagement begins with a clear growth and revenue blueprint." },
-              { title: "Transparent Pricing", desc: "Clear separation between strategy and execution, no hidden fees." },
-              { title: "Measurable Results", desc: "Performance tracked through defined KPIs tied to leads and revenue." }
-            ].map((v, i) => (
+              { title: "Clarity", desc: "Simple, focused strategies over noise and trends." },
+              { title: "Integrity", desc: "Honest recommendations, transparent results." },
+              { title: "Elegance", desc: "Clean, refined, and intentional execution." },
+              { title: "Growth", desc: "Sustainable progress, not short-term hype." },
+              { title: "Partnership", desc: "We grow with our clients, not just for them." }
+            ].map((value, i) => (
               <motion.div 
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="bg-background p-8 rounded-2xl shadow-sm border border-border"
+                className="bg-card p-8 rounded-3xl border border-border hover:border-accent/30 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
               >
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-6">
+                <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center text-accent mb-6">
                   <CheckCircle2 className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-bold font-display mb-3">{v.title}</h3>
-                <p className="text-muted-foreground">{v.desc}</p>
+                <h3 className="text-xl font-bold font-display mb-3 text-foreground">{value.title}</h3>
+                <p className="text-muted-foreground leading-relaxed">{value.desc}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className="py-24">
+      {/* Brand Personality */}
+      <section className="py-24 bg-secondary/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-display font-bold mb-16 text-center">Meet Our Founders</h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {isLoading ? (
-               [1,2,3,4].map(i => <div key={i} className="h-96 bg-secondary animate-pulse rounded-2xl" />)
-            ) : (
-              team?.map((member, i) => (
-                <motion.div 
-                  key={member.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="group relative overflow-hidden rounded-2xl"
-                >
-                  <div className="aspect-[3/4] overflow-hidden bg-secondary">
-                    <img 
-                      src={member.imageUrl} 
-                      alt={member.name} 
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                    <h3 className="text-white font-bold text-xl">{member.name}</h3>
-                    <p className="text-primary-foreground/80 font-medium">{member.role}</p>
-                    <p className="text-white/60 text-sm mt-2 line-clamp-2">{member.bio}</p>
-                  </div>
-                </motion.div>
-              ))
-            )}
-            
-            {/* Fallback if no team data */}
-            {(!team || team.length === 0) && !isLoading && (
-              <div className="col-span-full text-center py-10 bg-secondary/20 rounded-2xl">
-                <p className="text-muted-foreground">Team members coming soon.</p>
-              </div>
-            )}
+          <div className="max-w-4xl mx-auto">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-3xl md:text-4xl font-display font-bold mb-6 text-foreground">
+                Our Brand Personality
+              </h2>
+              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+                SOLÈNE DIGITAL is calm but confident, strategic not salesy, polished yet approachable, and insightful never overwhelming.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+              >
+                <h3 className="text-2xl font-bold font-display mb-4 text-foreground">We Speak With</h3>
+                <ul className="space-y-3 text-muted-foreground">
+                  <li className="flex items-start gap-3">
+                    <span className="text-accent mt-1">•</span>
+                    <span>Assurance</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-accent mt-1">•</span>
+                    <span>Warmth</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-accent mt-1">•</span>
+                    <span>Intelligence</span>
+                  </li>
+                </ul>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+              >
+                <h3 className="text-2xl font-bold font-display mb-4 text-foreground">We Embrace</h3>
+                <ul className="space-y-3 text-muted-foreground">
+                  <li className="flex items-start gap-3">
+                    <span className="text-accent mt-1">•</span>
+                    <span>Simple explanations</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-accent mt-1">•</span>
+                    <span>Insight-led messaging</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-accent mt-1">•</span>
+                    <span>Calm authority</span>
+                  </li>
+                </ul>
+              </motion.div>
+            </div>
           </div>
         </div>
       </section>

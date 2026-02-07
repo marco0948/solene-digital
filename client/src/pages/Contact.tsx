@@ -38,17 +38,17 @@ export default function Contact() {
     <div className="min-h-screen bg-background">
       <Navbar />
 
-      <section className="pt-32 pb-20 bg-primary/5">
+      <section className="pt-32 pb-20 bg-secondary">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h1 
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl font-display font-bold mb-6"
+            className="text-5xl font-display font-bold mb-6 text-foreground"
           >
-            Let's Work Together
+            Let's talk about your goals.
           </motion.h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Ready to build your revenue growth system? Contact us to discuss your business goals and how we can help.
+            If you're ready to grow with clarity and intention, we'd love to hear from you.
           </p>
         </div>
       </section>
@@ -59,12 +59,13 @@ export default function Contact() {
             
             {/* Contact Info */}
             <div>
-              <h2 className="text-3xl font-display font-bold mb-8">Get in Touch</h2>
+              <h2 className="text-3xl font-display font-bold mb-8 text-foreground">Get in Touch</h2>
               <div className="space-y-8">
                 {[
                   { icon: Mail, title: "Email", content: "solenedigitalph@gmail.com" },
-                  { icon: Phone, title: "Contact Number", content: "+63 917 160 1639" },
-                  { icon: MapPin, title: "Services", content: "Digital Strategy, Paid Ads, Automation & Consulting" }
+                  { icon: Phone, title: "Mobile", content: "+63 952 457 1358" },
+                  { icon: Phone, title: "Viber", content: "+63 917 160 1639" },
+                  { icon: MapPin, title: "Location", content: "Based in Philippines | Working with brands everywhere" }
                 ].map((item, i) => (
                   <motion.div 
                     key={i}
@@ -73,28 +74,24 @@ export default function Contact() {
                     transition={{ delay: i * 0.1 }}
                     className="flex items-start gap-4"
                   >
-                    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary shrink-0">
+                    <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center text-accent shrink-0">
                       <item.icon className="w-6 h-6" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-lg mb-1">{item.title}</h3>
+                      <h3 className="font-bold text-lg mb-1 text-foreground">{item.title}</h3>
                       <p className="text-muted-foreground">{item.content}</p>
                     </div>
                   </motion.div>
                 ))}
               </div>
 
-              {/* Map Placeholder */}
-              <div className="mt-12 w-full h-64 bg-secondary rounded-2xl overflow-hidden grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
-                <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.8763446869463!2d120.9753!3d14.5995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTTCsDM1JzU3LjAiTiAxMjDCsDU4JzUxLjkiRQ!5e0!3m2!1sen!2sph!4v1234567890" 
-                  width="100%" 
-                  height="100%" 
-                  style={{ border: 0 }} 
-                  allowFullScreen 
-                  loading="lazy"
-                  title="Map"
-                />
+              {/* Additional Info */}
+              <div className="mt-12 p-6 bg-card rounded-2xl border border-border">
+                <h3 className="text-xl font-bold font-display mb-3 text-foreground">Partnership Inquiry</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  SOLÈNE DIGITAL partners with a limited number of clients to ensure focus and quality. 
+                  We're currently accepting new partnerships for Q2 2026.
+                </p>
               </div>
             </div>
 
@@ -106,19 +103,21 @@ export default function Contact() {
                   animate={{ opacity: 1, scale: 1 }}
                   className="text-center py-20"
                 >
-                  <div className="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <CheckCircle2 className="w-10 h-10" />
+                  <div className="w-20 h-20 bg-accent/10 text-accent rounded-full flex items-center justify-center mx-auto mb-6">
+                    <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                    </svg>
                   </div>
-                  <h3 className="text-2xl font-bold mb-2">Message Sent!</h3>
-                  <p className="text-muted-foreground mb-8">We'll be in touch shortly.</p>
-                  <Button onClick={() => setSuccess(false)} variant="outline">
+                  <h3 className="text-2xl font-bold mb-2 text-foreground">Message Sent!</h3>
+                  <p className="text-muted-foreground mb-8">We'll be in touch shortly to discuss your growth strategy.</p>
+                  <Button onClick={() => setSuccess(false)} variant="outline" className="btn-secondary">
                     Send another message
                   </Button>
                 </motion.div>
               ) : (
                 <Form {...form}>
                   <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                    <h2 className="text-2xl font-bold font-display mb-6">Send us a message</h2>
+                    <h2 className="text-2xl font-bold font-display mb-6 text-foreground">Send us a message</h2>
                     
                     <FormField
                       control={form.control}
@@ -127,7 +126,7 @@ export default function Contact() {
                         <FormItem>
                           <FormLabel>Name</FormLabel>
                           <FormControl>
-                            <Input placeholder="Your Full Name" {...field} className="h-12 bg-secondary/20" />
+                            <Input placeholder="Your Full Name" {...field} className="h-12 bg-secondary/20 border-border focus:border-accent" />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -141,7 +140,7 @@ export default function Contact() {
                         <FormItem>
                           <FormLabel>Email</FormLabel>
                           <FormControl>
-                            <Input placeholder="your@email.com" {...field} className="h-12 bg-secondary/20" />
+                            <Input placeholder="your@email.com" {...field} className="h-12 bg-secondary/20 border-border focus:border-accent" />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -156,8 +155,8 @@ export default function Contact() {
                           <FormLabel>Message</FormLabel>
                           <FormControl>
                             <Textarea 
-                              placeholder="Tell us about your business goals..." 
-                              className="min-h-[150px] bg-secondary/20 resize-none" 
+                              placeholder="Tell us about your business goals and how we can help..." 
+                              className="min-h-[150px] bg-secondary/20 resize-none border-border focus:border-accent" 
                               {...field} 
                             />
                           </FormControl>
@@ -168,7 +167,7 @@ export default function Contact() {
 
                     <Button 
                       type="submit" 
-                      className="w-full h-12 text-lg font-semibold"
+                      className="btn-primary w-full h-12 text-lg font-semibold"
                       disabled={mutation.isPending}
                     >
                       {mutation.isPending ? (
@@ -190,26 +189,5 @@ export default function Contact() {
 
       <Footer />
     </div>
-  );
-}
-
-// Icon for success state
-function CheckCircle2(props: any) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
-      <path d="m9 12 2 2 4-4" />
-    </svg>
   );
 }
