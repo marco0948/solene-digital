@@ -1,10 +1,7 @@
-const { drizzle } = require('drizzle-orm/node-postgres');
-const { Pool } = require('pg');
-const schema = require('./shared/schema.ts');
-
-const pool = new Pool({ 
-  connectionString: process.env.DATABASE_URL,
-});
+import { drizzle } from 'drizzle-orm/node-postgres';
+import { migrate } from 'drizzle-orm/node-postgres/migrator';
+import { pool } from './server/db.js';
+import { schema } from './shared/schema.js';
 
 const db = drizzle(pool, { schema });
 
