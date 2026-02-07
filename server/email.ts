@@ -6,8 +6,8 @@ const transporter = nodemailer.createTransport({
   port: parseInt(process.env.SMTP_PORT || "587", 10),
   secure: process.env.SMTP_SECURE === "true", // true for 465, false for other ports
   auth: {
-    user: process.env.SMTP_USER || "solenedigitalph@gmail.com",
-    pass: process.env.SMTP_PASSWORD?.trim() || "",
+    user: process.env.SMTP_USER || "mronquillo799@gmail.com",
+    pass: process.env.SMTP_PASSWORD?.trim().replace(/\s+/g, '') || "",
   },
 });
 
@@ -27,7 +27,7 @@ export interface EmailOptions {
 export async function sendEmail(options: EmailOptions): Promise<void> {
   try {
     await transporter.sendMail({
-      from: process.env.SMTP_FROM || "solenedigitalph@gmail.com",
+      from: process.env.SMTP_FROM || "mronquillo799@gmail.com",
       to: options.to,
       subject: options.subject,
       html: options.html,
@@ -68,7 +68,7 @@ export async function sendContactNotification(
 
   // Send to admin
   await sendEmail({
-    to: process.env.ADMIN_EMAIL || "solenedigitalph@gmail.com",
+    to: process.env.ADMIN_EMAIL || "mronquillo799@gmail.com",
     subject: `New Contact Submission from ${clientName}`,
     html: adminEmailHtml,
   });
